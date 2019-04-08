@@ -11,16 +11,22 @@ import android.widget.TextView;
 
 import com.example.cleanarchitecture_mvvm.MainApplication;
 import com.example.cleanarchitecture_mvvm.R;
+import com.example.cleanarchitecture_mvvm.base.BaseActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity implements MainNavigator  {
+public class MainActivity extends BaseActivity<MainViewModel> implements MainNavigator  {
 
     private TextView textView;
     @Inject
     ViewModelProvider.Factory viewModelFactory;
 
     MainViewModel mainViewModel;
+
+    @Override
+    public MainViewModel getViewModel() {
+        return mainViewModel;
+    }
 
 
 
